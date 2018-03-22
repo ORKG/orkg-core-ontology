@@ -1,0 +1,235 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix oco: <http://orkg.org/core#> .
+
+<http://orkg.org/core>
+    a owl:Ontology ;
+    rdfs:label "ORKG Core Ontology" ;
+    rdfs:comment "Based on the Science Ontology from https://derivadow.com/2011/04/19/science-ontology-take-three/" .    
+
+# Classes
+ 
+oco:Observation a owl:Class;
+    rdfs:label "Observation";
+    rdfs:comment "Definition goes here" .
+ 
+oco:Hypothesis a owl:Class;
+    rdfs:label "Hypothesis";
+    rdfs:comment "Definition goes here" .
+ 
+oco:Experiment a owl:Class;
+    rdfs:label "Experiment";
+    rdfs:comment "Definition goes here" .
+ 
+oco:Equipment a owl:Class;
+    rdfs:label "Equipment";
+    rdfs:comment "Definition goes here" .
+ 
+oco:Method a owl:Class;
+    rdfs:label "Method";
+    rdfs:comment "Definition goes here" .
+ 
+oco:Collaboration a owl:Class;
+    rdfs:label "Collaboration";
+    rdfs:comment "Definition goes here" .
+ 
+oco:ExperimentalObservation a owl:Class;
+    rdfs:label "Experimental Observation";
+    rdfs:comment "Definition goes here";
+    rdfs:subClassOf oco:Observation .
+ 
+oco:Data a owl:Class;
+    rdfs:label "Data";
+    rdfs:comment "Definition goes here" .
+ 
+oco:Analysis a owl:Class;
+    rdfs:label "Analysis";
+    rdfs:comment "Definition goes here" .
+ 
+oco:Publication a owl:Class;
+    rdfs:label "Publication";
+    rdfs:comment "Definition goes here" .
+ 
+oco:Theory a owl:Class;
+    rdfs:label "Theory";
+    rdfs:comment "Definition goes here" .
+ 
+oco:Prediction a owl:Class;
+    rdfs:label "Prediction";
+    rdfs:comment "Definition goes here" .
+ 
+oco:Agent a owl:Class;
+    rdfs:label "Agent";
+    rdfs:comment "Definition goes here" ;
+    rdfs:subClassOf foaf:Agent .
+ 
+# Properties
+ 
+oco:inspiredBy a owl:ObjectProperty;
+    rdfs:label "inspiredBy";
+    rdfs:comment "definition goes here - but what happens with multiple ranges? hypotheses can be inspired by Observations, Theories and Predictions...";
+    rdfs:domain oco:Hypothesis;
+    rdfs:range oco:Observation;
+    rdfs:range oco:Theory;
+    rdfs:range oco:Prediction .
+ 
+oco:makes a owl:ObjectProperty;
+    rdfs:label "makes";
+    rdfs:comment "definition goes here";
+    rdfs:domain oco:Theory;
+    rdfs:range oco:Prediction .
+ 
+oco:tests a owl:ObjectProperty;
+    rdfs:label "tests";
+    rdfs:comment "definition goes here";
+    rdfs:domain oco:Experiment;
+    rdfs:range oco:Hypothesis .
+ 
+oco:equipment a owl:ObjectProperty;
+    rdfs:label "equipment";
+    rdfs:comment "Relates a piece of equipment to an experiment it is used in.";
+    rdfs:domain oco:Experiment;
+    rdfs:range oco:Equipment .
+ 
+oco:method a owl:ObjectProperty;
+    rdfs:label "method";
+    rdfs:comment "Relates a method to an experiment it was used in.";
+    rdfs:domain oco:Experiment;
+    rdfs:range oco:Method .
+ 
+oco:experimentalObservation a owl:ObjectProperty;
+    rdfs:label "experimental observation";
+    rdfs:comment "Relates an observation made as a result of an experiment to the experiment it was made in.";
+    rdfs:domain oco:Experiment;
+    rdfs:range oco:ExperimentalObservation .
+ 
+oco:captures a owl:ObjectProperty;
+    rdfs:label "captures";
+    rdfs:comment "Relates data to an experimental observation it was captured in.";
+    rdfs:domain oco:ExperimentalObservation;
+    rdfs:range oco:Data .
+ 
+oco:analyses a owl:ObjectProperty;
+    rdfs:label "analyses";
+    rdfs:comment "Definition goes here";
+    rdfs:domain oco:Analysis;
+    rdfs:range oco:Data .
+ 
+oco:published a owl:ObjectProperty;
+    rdfs:label "published";
+    rdfs:comment "Relates an Analysis to a Publication it was published in.";
+    rdfs:domain oco:Analysis;
+    rdfs:range oco:Publication .
+ 
+# Analysis to Theory
+ 
+oco:establishes a owl:ObjectProperty;
+    rdfs:label "establishes";
+    rdfs:comment "Definition goes here";
+    rdfs:domain oco:Analysis;
+    rdfs:range oco:Theory .
+ 
+oco:validates a owl:ObjectProperty;
+    rdfs:label "validates";
+    rdfs:comment "Definition goes here.";
+    rdfs:domain oco:Analysis;
+    rdfs:range oco:Theory .
+ 
+oco:modifies a owl:ObjectProperty;
+    rdfs:label "modifies";
+    rdfs:comment "Definition goes here.";
+    rdfs:domain oco:Analysis;
+    rdfs:range oco:Theory .
+ 
+oco:contradicts a owl:ObjectProperty;
+    rdfs:label "contradicts";
+    rdfs:comment "Definition goes here.";
+    rdfs:domain oco:Analysis;
+    rdfs:range oco:Theory .
+ 
+# Analysis to Hypothesis
+ 
+oco:supports a owl:ObjectProperty;
+    rdfs:label "supports";
+    rdfs:comment "Definition goes here.";
+    rdfs:domain oco:Analysis;
+    rdfs:range oco:Hypothesis .
+ 
+oco:modifies a owl:ObjectProperty;
+    rdfs:label "modifies";
+    rdfs:comment "Definition goes here.";
+    rdfs:domain oco:Analysis;
+    rdfs:range oco:Hypothesis .
+ 
+oco:disproves a owl:ObjectProperty;
+    rdfs:label "disproves";
+    rdfs:comment "Definition goes here.";
+    rdfs:domain oco:Analysis;
+    rdfs:range oco:Hypothesis .
+ 
+# Agent properties
+ 
+oco:proposes a owl:ObjectProperty;
+    rdfs:label "proposes";
+    rdfs:comment "Definition goes here.";
+    rdfs:domain oco:Agent;
+    rdfs:range oco:Hypothesis .
+ 
+oco:collaborates a owl:ObjectProperty;
+    rdfs:label "collaborates";
+    rdfs:comment "Definition goes here.";
+    rdfs:domain oco:Agent;
+    rdfs:range oco:Collaboration .
+ 
+oco:funds a owl:ObjectProperty;
+    rdfs:label "funds";
+    rdfs:comment "Definition goes here.";
+    rdfs:domain oco:Agent;
+    rdfs:range oco:Experiment .
+ 
+oco:performs a owl:ObjectProperty;
+    rdfs:label "performs";
+    rdfs:comment "Definition goes here.";
+    rdfs:domain oco:Agent;
+    rdfs:range oco:Experiment .
+ 
+oco:observes a owl:ObjectProperty;
+    rdfs:label "proposes";
+    rdfs:comment "Definition goes here.";
+    rdfs:domain oco:Agent;
+    rdfs:range oco:Observation .
+ 
+oco:forms a owl:ObjectProperty;
+    rdfs:label "forms";
+    rdfs:comment "Definition goes here.";
+    rdfs:domain oco:Agent;
+    rdfs:range oco:Analysis .
+ 
+oco:creates a owl:ObjectProperty;
+    rdfs:label "creates";
+    rdfs:comment "Definition goes here.";
+    rdfs:domain oco:Agent;
+    rdfs:range oco:Publication .
+ 
+oco:creditedWith a owl:ObjectProperty;
+    rdfs:label "credited with";
+    rdfs:comment "Definition goes here.";
+    rdfs:domain oco:Agent;
+    rdfs:range oco:Theory .
+ 
+oco:participates a owl:ObjectProperty;
+    rdfs:label "participates";
+    rdfs:comment "Definition goes here.";
+    rdfs:domain oco:Agent;
+    rdfs:range oco:Agent .
+ 
+oco:collaboratesOn a owl:ObjectProperty;
+    rdfs:label "proposes";
+    rdfs:comment "Definition goes here.";
+    rdfs:domain oco:Collaboration;
+    rdfs:range oco:Experiment;
+    rdfs:range oco:Hypothesis .
