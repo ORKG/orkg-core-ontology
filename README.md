@@ -1,0 +1,1 @@
+# orkg-core-ontology
