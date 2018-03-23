@@ -70,7 +70,7 @@ oco:Agent a owl:Class;
 # Properties
  
 oco:inspiredBy a owl:ObjectProperty;
-    rdfs:label "inspiredBy";
+    rdfs:label "inspired by";
     rdfs:comment "definition goes here - but what happens with multiple ranges? hypotheses can be inspired by Observations, Theories and Predictions...";
     rdfs:domain oco:Hypothesis;
     rdfs:range oco:Observation;
@@ -198,7 +198,7 @@ oco:performs a owl:ObjectProperty;
     rdfs:range oco:Experiment .
  
 oco:observes a owl:ObjectProperty;
-    rdfs:label "proposes";
+    rdfs:label "observes";
     rdfs:comment "Definition goes here.";
     rdfs:domain oco:Agent;
     rdfs:range oco:Observation .
@@ -228,7 +228,7 @@ oco:participates a owl:ObjectProperty;
     rdfs:range oco:Agent .
  
 oco:collaboratesOn a owl:ObjectProperty;
-    rdfs:label "proposes";
+    rdfs:label "collaborates on";
     rdfs:comment "Definition goes here.";
     rdfs:domain oco:Collaboration;
     rdfs:range oco:Experiment;
