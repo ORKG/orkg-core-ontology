@@ -71,9 +71,15 @@ oco:Prediction a owl:Class;
  
 oco:inspiredBy a owl:ObjectProperty;
     rdfs:label "inspired by";
-    rdfs:comment "definition goes here - but what happens with multiple ranges? hypotheses can be inspired by Observations, Theories and Predictions...";
+    rdfs:comment "definition goes here";
     rdfs:domain oco:Hypothesis;
-    rdfs:range [ owl:unionOf ( oco:Observation oco:Theory oco:Prediction ) ] .
+    rdfs:range oco:Observation .
+
+oco:basedOn a owl:ObjectProperty;
+    rdfs:label "based on";
+    rdfs:comment "definition goes here";
+    rdfs:domain oco:Hypothesis;
+    rdfs:range oco:Prediction .
  
 oco:makes a owl:ObjectProperty;
     rdfs:label "makes";
