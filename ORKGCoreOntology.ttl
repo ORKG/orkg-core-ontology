@@ -33,9 +33,9 @@ oco:Method a owl:Class;
     rdfs:label "Method";
     rdfs:comment "Definition goes here" .
  
-oco:Collaboration a owl:Class;
-    rdfs:label "Collaboration";
-    rdfs:comment "Definition goes here" .
+#oco:Collaboration a owl:Class;
+#    rdfs:label "Collaboration";
+#    rdfs:comment "Definition goes here" .
  
 oco:ExperimentalObservation a owl:Class;
     rdfs:label "Experimental Observation";
@@ -62,10 +62,10 @@ oco:Prediction a owl:Class;
     rdfs:label "Prediction";
     rdfs:comment "Definition goes here" .
  
-oco:Agent a owl:Class;
-    rdfs:label "Agent";
-    rdfs:comment "Definition goes here" ;
-    rdfs:subClassOf foaf:Agent .
+#oco:Agent a owl:Class;
+#    rdfs:label "Agent";
+#    rdfs:comment "Definition goes here" ;
+#    rdfs:subClassOf foaf:Agent .
  
 # Properties
  
@@ -171,62 +171,62 @@ oco:disproves a owl:ObjectProperty;
  
 # Agent properties
  
-oco:proposes a owl:ObjectProperty;
-    rdfs:label "proposes";
-    rdfs:comment "Definition goes here.";
-    rdfs:domain oco:Agent;
-    rdfs:range oco:Hypothesis .
+#oco:proposes a owl:ObjectProperty;
+#    rdfs:label "proposes";
+#    rdfs:comment "Definition goes here.";
+#    rdfs:domain oco:Agent;
+#    rdfs:range oco:Hypothesis .
  
-oco:collaborates a owl:ObjectProperty;
-    rdfs:label "collaborates";
-    rdfs:comment "Definition goes here.";
-    rdfs:domain oco:Agent;
-    rdfs:range oco:Collaboration .
+#oco:collaborates a owl:ObjectProperty;
+#    rdfs:label "collaborates";
+#    rdfs:comment "Definition goes here.";
+#    rdfs:domain oco:Agent;
+#    rdfs:range oco:Collaboration .
  
-oco:funds a owl:ObjectProperty;
-    rdfs:label "funds";
-    rdfs:comment "Definition goes here.";
-    rdfs:domain oco:Agent;
-    rdfs:range oco:Experiment .
+#oco:funds a owl:ObjectProperty;
+#    rdfs:label "funds";
+#    rdfs:comment "Definition goes here.";
+#    rdfs:domain oco:Agent;
+#    rdfs:range oco:Experiment .
  
-oco:performs a owl:ObjectProperty;
-    rdfs:label "performs";
-    rdfs:comment "Definition goes here.";
-    rdfs:domain oco:Agent;
-    rdfs:range oco:Experiment .
+#oco:performs a owl:ObjectProperty;
+#    rdfs:label "performs";
+#    rdfs:comment "Definition goes here.";
+#    rdfs:domain oco:Agent;
+#    rdfs:range oco:Experiment .
  
-oco:observes a owl:ObjectProperty;
-    rdfs:label "observes";
-    rdfs:comment "Definition goes here.";
-    rdfs:domain oco:Agent;
-    rdfs:range oco:Observation .
+#oco:observes a owl:ObjectProperty;
+#    rdfs:label "observes";
+#    rdfs:comment "Definition goes here.";
+#    rdfs:domain oco:Agent;
+#    rdfs:range oco:Observation .
  
-oco:forms a owl:ObjectProperty;
-    rdfs:label "forms";
-    rdfs:comment "Definition goes here.";
-    rdfs:domain oco:Agent;
-    rdfs:range oco:Analysis .
+#oco:forms a owl:ObjectProperty;
+#    rdfs:label "forms";
+#    rdfs:comment "Definition goes here.";
+#    rdfs:domain oco:Agent;
+#    rdfs:range oco:Analysis .
  
-oco:creates a owl:ObjectProperty;
-    rdfs:label "creates";
-    rdfs:comment "Definition goes here.";
-    rdfs:domain oco:Agent;
-    rdfs:range oco:Publication .
+#oco:creates a owl:ObjectProperty;
+#    rdfs:label "creates";
+#    rdfs:comment "Definition goes here.";
+#    rdfs:domain oco:Agent;
+#    rdfs:range oco:Publication .
  
-oco:creditedWith a owl:ObjectProperty;
-    rdfs:label "credited with";
-    rdfs:comment "Definition goes here.";
-    rdfs:domain oco:Agent;
-    rdfs:range oco:Theory .
+#oco:creditedWith a owl:ObjectProperty;
+#    rdfs:label "credited with";
+#    rdfs:comment "Definition goes here.";
+#    rdfs:domain oco:Agent;
+#    rdfs:range oco:Theory .
  
-oco:participates a owl:ObjectProperty;
-    rdfs:label "participates";
-    rdfs:comment "Definition goes here.";
-    rdfs:domain oco:Agent;
-    rdfs:range oco:Agent .
+#oco:participates a owl:ObjectProperty;
+#    rdfs:label "participates";
+#    rdfs:comment "Definition goes here.";
+#    rdfs:domain oco:Agent;
+#    rdfs:range oco:Agent .
  
-oco:collaboratesOn a owl:ObjectProperty;
-    rdfs:label "collaborates on";
-    rdfs:comment "Definition goes here.";
-    rdfs:domain oco:Collaboration;
-    rdfs:range [ owl:unionOf ( oco:Experiment oco:Hypothesis ) ] .
+#oco:collaboratesOn a owl:ObjectProperty;
+#    rdfs:label "collaborates on";
+#    rdfs:comment "Definition goes here.";
+#    rdfs:domain oco:Collaboration;
+#    rdfs:range [ owl:unionOf ( oco:Experiment oco:Hypothesis ) ] .
